@@ -286,9 +286,12 @@ export default function LoginPage() {
 
                     {/* Contextual hint */}
                     {isNewUser ? (
-                        <div className="bg-white border border-rose-100 rounded-xl px-4 py-3 mb-5 text-center shadow-sm">
-                            <p className="text-[11.5px] text-gray-600 leading-relaxed">
-                                {t("Register in under 60 seconds with Google — free, private, and exclusively for ITS-verified Dawoodi Bohra candidates.")}
+                        <div className="bg-gradient-to-br from-[#881337] to-[#600f26] border border-[#881337] rounded-xl px-4 py-3.5 mb-5 text-center shadow-md">
+                            <p className="text-[12px] font-black text-[#D4AF37] uppercase tracking-wide mb-1">
+                                All Premium Features Free — Register Now
+                            </p>
+                            <p className="text-[11px] text-white/90 leading-relaxed">
+                                {t("Register in under 60 seconds with Google — private, and exclusively for ITS-verified Dawoodi Bohra candidates.")}
                             </p>
                         </div>
                     ) : (
