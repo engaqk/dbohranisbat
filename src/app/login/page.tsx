@@ -202,20 +202,67 @@ export default function LoginPage() {
                 )}
 
                 {/* ── OUTCOME-FIRST HERO ── */}
-                <div className="bg-white px-6 pt-6 pb-5 fade-up fade-up-2 text-center">
+                <div className="bg-white px-6 pt-6 pb-2 fade-up fade-up-2 text-center">
                     <p className="text-[12.5px] text-gray-500 leading-relaxed">
                         {t("Join the")} <span className="bg-[#D4AF37] text-white px-2 py-0.5 rounded-md font-black">{t("most trusted platform")}</span> {t("of 100% ITS-verified")} <span className="bg-[#D4AF37] text-white px-1.5 rounded font-black whitespace-nowrap">{t("Dawoodi Bohra")}</span> {t("candidates — where privacy matters most.")}
                     </p>
                     <p className="text-[11px] font-extrabold text-[#881337] mt-3 flex items-center justify-center gap-1">
                         <span>🛡️</span> {t("Utmost privacy. Complete control. Family trusted.")}
                     </p>
-                    <button
-                        onClick={() => document.getElementById('scroller-section')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="mt-4 inline-flex items-center gap-2 text-[12px] font-extrabold text-[#881337] bg-amber-50 border-2 border-[#D4AF37] px-5 py-2 rounded-full hover:bg-[#D4AF37] hover:text-white transition-all cursor-pointer mx-auto shadow-[0_4px_12px_rgba(212,175,55,0.2)] active:scale-95"
-                    >
-                        <span>👀 {t("View Live Profiles Glimpse")}</span>
-                        <span className="animate-bounce font-black">↓</span>
-                    </button>
+                </div>
+
+                {/* ── LIVE PROFILE SCROLLER ── */}
+                <div id="scroller-section" className="bg-white px-6 py-4 fade-up fade-up-3">
+                    <div className="text-center mb-4">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37] mb-1">The Most Trusted Platform</p>
+                        <h3 className="text-[15px] font-black text-[#881337] mb-1">Live Glimpse of the Platform</h3>
+                        <p className="text-[11.5px] text-gray-500 leading-relaxed">
+                            These are <strong className="text-[#D4AF37]">real, verified registered members</strong>.
+                        </p>
+                    </div>
+
+                    {/* Live member stats */}
+                    <div className="flex justify-center gap-8 mb-5">
+                        <div className="text-center">
+                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">{liveVerifiedCount ? `${liveVerifiedCount}+` : '...'}</p>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Verified Members</p>
+                        </div>
+                        <div className="w-px bg-gray-100"></div>
+                        <div className="text-center">
+                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">100%</p>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">ITS Verified</p>
+                        </div>
+                    </div>
+
+                    {/* Scroller */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-50 border border-rose-100 rounded-lg text-[10px] uppercase tracking-widest text-[#881337] mb-3 font-extrabold w-full justify-center">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#881337] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#881337]"></span>
+                        </span>
+                        How Profile & Photo Privacy Works
+                    </div>
+                    <div className="w-full max-w-[320px] mx-auto h-[400px] rounded-xl border-2 border-rose-100 shadow-[0_4px_12px_rgba(140,28,58,0.08)] bg-white overflow-hidden relative">
+                        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
+                        <div className="flex flex-col gap-6 p-4 animate-[scrollUp_30s_linear_infinite] select-none pointer-events-none blur-[2px] opacity-90">
+                            {[...demoProfiles, ...demoProfiles].map((profile, i) => (
+                                <div key={i} className={`transform scale-[0.85] origin-top w-[117%] -ml-[8.5%] ${profile?.gender === 'male' ? 'blur-male-img' : ''} relative`}>
+                                    {profile ? <DiscoveryCard {...profile} isMyProfileVerified={true} /> : null}
+                                    {/* Login-to-interact overlay on the Send Interest button area */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-[72px] z-50 flex items-end px-4 pb-4">
+                                        <div className="w-full py-3 rounded-xl bg-gradient-to-r from-[#881337] to-[#9F1239] text-white text-[13px] font-black text-center shadow-md flex items-center justify-center gap-2">
+                                            <span>🔐 Login to Send Rishta</span>
+                                            <span className="text-[#D4AF37]">→</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            {demoProfiles.length === 0 && (
+                                <div className="flex items-center justify-center h-full text-xs text-gray-400">Loading verified profiles…</div>
+                            )}
+                        </div>
+                    </div>
                 </div>
 
                 {/* ── AUTH ZONE ── */}
@@ -291,60 +338,6 @@ export default function LoginPage() {
                                 <span className="text-xl">👨‍👩‍👧</span>
                                 <p className="text-[10px] font-bold text-gray-700 leading-tight">Family can co-manage</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ── LIVE PROFILE SCROLLER ── */}
-                <div id="scroller-section" className="bg-white px-6 py-6 fade-up fade-up-5">
-                    <div className="text-center mb-4">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37] mb-1">The Most Trusted Platform</p>
-                        <h3 className="text-[15px] font-black text-[#881337] mb-1">Live Glimpse of the Platform</h3>
-                        <p className="text-[11.5px] text-gray-500 leading-relaxed">
-                            These are <strong className="text-[#D4AF37]">real, verified registered members</strong>.
-                        </p>
-                    </div>
-
-                    {/* Live member stats */}
-                    <div className="flex justify-center gap-8 mb-5">
-                        <div className="text-center">
-                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">{liveVerifiedCount ? `${liveVerifiedCount}+` : '...'}</p>
-                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Verified Members</p>
-                        </div>
-                        <div className="w-px bg-gray-100"></div>
-                        <div className="text-center">
-                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">100%</p>
-                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">ITS Verified</p>
-                        </div>
-                    </div>
-
-                    {/* Scroller */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-50 border border-rose-100 rounded-lg text-[10px] uppercase tracking-widest text-[#881337] mb-3 font-extrabold w-full justify-center">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#881337] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#881337]"></span>
-                        </span>
-                        How Profile & Photo Privacy Works
-                    </div>
-                    <div className="w-full max-w-[320px] mx-auto h-[400px] rounded-xl border-2 border-rose-100 shadow-[0_4px_12px_rgba(140,28,58,0.08)] bg-white overflow-hidden relative">
-                        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none"></div>
-                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
-                        <div className="flex flex-col gap-6 p-4 animate-[scrollUp_30s_linear_infinite] select-none pointer-events-none blur-[2px] opacity-90">
-                            {[...demoProfiles, ...demoProfiles].map((profile, i) => (
-                                <div key={i} className={`transform scale-[0.85] origin-top w-[117%] -ml-[8.5%] ${profile?.gender === 'male' ? 'blur-male-img' : ''} relative`}>
-                                    {profile ? <DiscoveryCard {...profile} isMyProfileVerified={true} /> : null}
-                                    {/* Login-to-interact overlay on the Send Interest button area */}
-                                    <div className="absolute bottom-0 left-0 right-0 h-[72px] z-50 flex items-end px-4 pb-4">
-                                        <div className="w-full py-3 rounded-xl bg-gradient-to-r from-[#881337] to-[#9F1239] text-white text-[13px] font-black text-center shadow-md flex items-center justify-center gap-2">
-                                            <span>🔐 Login to Send Rishta</span>
-                                            <span className="text-[#D4AF37]">→</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                            {demoProfiles.length === 0 && (
-                                <div className="flex items-center justify-center h-full text-xs text-gray-400">Loading verified profiles…</div>
-                            )}
                         </div>
                     </div>
                 </div>
