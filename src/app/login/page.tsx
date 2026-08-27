@@ -286,11 +286,11 @@ export default function LoginPage() {
 
                     {/* Contextual hint */}
                     {isNewUser ? (
-                        <div className="bg-gradient-to-br from-[#881337] to-[#600f26] border border-[#881337] rounded-xl px-4 py-3.5 mb-5 text-center shadow-md">
-                            <p className="text-[12px] font-black text-[#D4AF37] uppercase tracking-wide mb-1">
-                                All Premium Features Free — Register Now
+                        <div className="bg-gradient-to-br from-rose-50 to-amber-50 border border-rose-200 rounded-xl px-4 py-3.5 mb-5 text-center shadow-sm">
+                            <p className="text-[11px] font-black text-[#881337] uppercase tracking-wider mb-1">
+                                🎉 All Premium Features Free — Register Now
                             </p>
-                            <p className="text-[11px] text-white/90 leading-relaxed">
+                            <p className="text-[11px] text-gray-700 leading-relaxed font-medium">
                                 {t("Register in under 60 seconds with Google — private, and exclusively for ITS-verified Dawoodi Bohra candidates.")}
                             </p>
                         </div>
