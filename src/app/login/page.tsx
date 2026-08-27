@@ -171,21 +171,21 @@ export default function LoginPage() {
             <div className="max-w-md w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 z-10 relative">
 
                 {/* ── HEADER ── */}
-                <div className="bg-[#881337] p-6 pb-5 text-center relative overflow-hidden">
+                <div className="bg-[#881337] p-8 text-center relative overflow-hidden">
                     {/* Absolute Language Switcher */}
                     <div className="absolute top-4 right-4 z-50">
                         <LanguageSwitcher variant="login" />
                     </div>
                     <div className="absolute top-0 right-0 p-4 opacity-10"><Sparkles className="w-24 h-24" /></div>
-                    <div className="w-14 h-14 bg-gradient-to-br from-white to-rose-100 text-[#D4AF37] rounded-full flex items-center justify-center font-bold text-2xl shadow-[0_0_30px_rgba(212,175,55,0.5)] mx-auto mb-3 border-2 border-[#D4AF37] ring-4 ring-white/20">53</div>
-                    <h1 className="text-3xl font-extrabold font-serif text-white mb-1 tracking-tight drop-shadow-md">DBohra<span className="text-[#D4AF37] font-medium italic">Rishta</span></h1>
-                    <p className="text-white/80 font-bold tracking-[0.25em] uppercase text-[9px] mt-2 border-t border-white/20 pt-2 inline-block">{t("Intelligent search with extraordinary features")}</p>
-                    <div className="mt-3 inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1 backdrop-blur-sm">
+                    <div className="w-16 h-16 bg-gradient-to-br from-white to-rose-100 text-[#D4AF37] rounded-full flex items-center justify-center font-bold text-3xl shadow-[0_0_30px_rgba(212,175,55,0.5)] mx-auto mb-4 border-2 border-[#D4AF37] ring-4 ring-white/20">53</div>
+                    <h1 className="text-4xl font-extrabold font-serif text-white mb-1 tracking-tight drop-shadow-md">DBohra<span className="text-[#D4AF37] font-medium italic">Rishta</span></h1>
+                    <p className="text-white/80 font-bold tracking-[0.25em] uppercase text-[10px] mt-2 border-t border-white/20 pt-2 inline-block">{t("Intelligent search with extraordinary features")}</p>
+                    <div className="mt-4 inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 backdrop-blur-sm">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4AF37]"></span>
                         </span>
-                        <span className="text-[10px] font-black text-white">
+                        <span className="text-[11px] font-black text-white">
                             {liveVerifiedCount ? `${liveVerifiedCount}+ ${t("ITS Card Verified Registered Candidates")}` : 'Loading...'}
                         </span>
                     </div>
@@ -202,40 +202,40 @@ export default function LoginPage() {
                 )}
 
                 {/* ── OUTCOME-FIRST HERO ── */}
-                <div className="bg-white px-6 pt-4 pb-0 fade-up fade-up-2 text-center">
-                    <p className="text-[12px] text-gray-500 leading-relaxed">
+                <div className="bg-white px-6 pt-6 pb-2 fade-up fade-up-2 text-center">
+                    <p className="text-[12.5px] text-gray-500 leading-relaxed">
                         {t("Join the")} <span className="bg-[#D4AF37] text-white px-2 py-0.5 rounded-md font-black">{t("most trusted platform")}</span> {t("of 100% ITS-verified")} <span className="bg-[#D4AF37] text-white px-1.5 rounded font-black whitespace-nowrap">{t("Dawoodi Bohra")}</span> {t("candidates — where privacy matters most.")}
                     </p>
-                    <p className="text-[10px] font-extrabold text-[#881337] mt-2 flex items-center justify-center gap-1">
+                    <p className="text-[11px] font-extrabold text-[#881337] mt-3 flex items-center justify-center gap-1">
                         <span>🛡️</span> {t("Utmost privacy. Complete control. Family trusted.")}
                     </p>
                 </div>
 
                 {/* ── LIVE PROFILE SCROLLER ── */}
-                <div id="scroller-section" className="bg-white px-6 py-2 fade-up fade-up-3">
-                    <div className="text-center mb-2">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37] mb-0.5">The Most Trusted Platform</p>
-                        <h3 className="text-[14px] font-black text-[#881337] mb-0.5">Live Glimpse of the Platform</h3>
-                        <p className="text-[11px] text-gray-500 leading-relaxed">
+                <div id="scroller-section" className="bg-white px-6 py-4 fade-up fade-up-3">
+                    <div className="text-center mb-4">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37] mb-1">The Most Trusted Platform</p>
+                        <h3 className="text-[15px] font-black text-[#881337] mb-1">Live Glimpse of the Platform</h3>
+                        <p className="text-[11.5px] text-gray-500 leading-relaxed">
                             These are <strong className="text-[#D4AF37]">real, verified registered members</strong>.
                         </p>
                     </div>
 
                     {/* Live member stats */}
-                    <div className="flex justify-center gap-6 mb-3">
+                    <div className="flex justify-center gap-8 mb-5">
                         <div className="text-center">
-                            <p className="text-[20px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37] leading-none">{liveVerifiedCount ? `${liveVerifiedCount}+` : '...'}</p>
-                            <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-1">Verified Members</p>
+                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">{liveVerifiedCount ? `${liveVerifiedCount}+` : '...'}</p>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">Verified Members</p>
                         </div>
                         <div className="w-px bg-gray-100"></div>
                         <div className="text-center">
-                            <p className="text-[20px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37] leading-none">100%</p>
-                            <p className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-1">ITS Verified</p>
+                            <p className="text-[24px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#881337] to-[#D4AF37]">100%</p>
+                            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">ITS Verified</p>
                         </div>
                     </div>
 
                     {/* Scroller */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 border border-rose-100 rounded-lg text-[9px] uppercase tracking-widest text-[#881337] mb-2 font-extrabold w-full justify-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-rose-50 border border-rose-100 rounded-lg text-[10px] uppercase tracking-widest text-[#881337] mb-3 font-extrabold w-full justify-center">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#881337] opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#881337]"></span>
