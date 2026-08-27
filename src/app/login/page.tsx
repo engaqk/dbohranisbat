@@ -202,17 +202,17 @@ export default function LoginPage() {
                 )}
 
                 {/* ── OUTCOME-FIRST HERO ── */}
-                <div className="bg-white px-6 pt-6 pb-2 fade-up fade-up-2 text-center">
+                <div className="bg-white px-6 pt-5 pb-0 text-center relative z-10 fade-up fade-up-2">
                     <p className="text-[12.5px] text-gray-500 leading-relaxed">
                         {t("Join the")} <span className="bg-[#D4AF37] text-white px-2 py-0.5 rounded-md font-black">{t("most trusted platform")}</span> {t("of 100% ITS-verified")} <span className="bg-[#D4AF37] text-white px-1.5 rounded font-black whitespace-nowrap">{t("Dawoodi Bohra")}</span> {t("candidates — where privacy matters most.")}
                     </p>
-                    <p className="text-[11px] font-extrabold text-[#881337] mt-3 flex items-center justify-center gap-1">
+                    <p className="text-[11px] font-extrabold text-[#881337] mt-3 mb-2 flex items-center justify-center gap-1">
                         <span>🛡️</span> {t("Utmost privacy. Complete control. Family trusted.")}
                     </p>
                 </div>
 
                 {/* ── LIVE PROFILE SCROLLER ── */}
-                <div id="scroller-section" className="bg-white px-6 py-4 fade-up fade-up-3">
+                <div id="scroller-section" className="bg-white px-6 pt-1 pb-4 fade-up fade-up-3">
                     <div className="text-center mb-4">
                         <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37] mb-1">The Most Trusted Platform</p>
                         <h3 className="text-[15px] font-black text-[#881337] mb-1">Live Glimpse of the Platform</h3>
