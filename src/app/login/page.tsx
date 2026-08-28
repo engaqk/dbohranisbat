@@ -146,7 +146,7 @@ export default function LoginPage() {
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50 flex flex-col items-center justify-start py-6 px-4 sm:py-10 text-[#881337]">
+        <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50 flex flex-col items-center justify-start pt-2 pb-6 px-4 sm:pt-4 sm:pb-10 text-[#881337]">
             <style>{`
                 @keyframes scrollUp {
                     0% { transform: translateY(0); }
