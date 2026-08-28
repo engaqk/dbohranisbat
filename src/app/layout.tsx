@@ -6,6 +6,7 @@ import GlobalNav from "@/components/GlobalNav";
 import ImpersonationBanner from "@/components/ImpersonationBanner";
 import PWAInstallBanner from "@/components/PWAInstallBanner";
 import RefreshManager from "@/components/RefreshManager";
+import PageWrapper from "@/components/PageWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -99,9 +100,9 @@ export default function RootLayout({
         <Providers>
           <ImpersonationBanner />
           <GlobalNav />
-          <div className="pt-16">
+          <PageWrapper>
             {children}
-          </div>
+          </PageWrapper>
           <RefreshManager />
           <PWAInstallBanner />
         </Providers>
