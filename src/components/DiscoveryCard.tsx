@@ -64,7 +64,7 @@ interface DiscoveryCardProps {
     verifiedPhone?: string;
 }
 
-export default function DiscoveryCard({
+const DiscoveryCard = React.memo(function DiscoveryCard({
     id, name, dob, jamaat, education, location, hizratLocation, libasImageUrl, matchScore = 85,
     isMyProfileVerified = false, heightFeet, heightInch,
     partnerQualities, isBlurSecurityEnabled = true, isItsVerified = false, bio,
@@ -385,7 +385,7 @@ export default function DiscoveryCard({
                                 <img
                                     src={currentPhoto}
                                     alt={displayName}
-                                    className={`w-full h-full object-cover transition-all duration-700 group-hover/image:scale-110 ${!canZoom ? 'blur-[3px] scale-105' : ''}`}
+                                    loading="lazy" className={`w-full h-full object-cover transition-all duration-700 group-hover/image:scale-110 ${!canZoom ? 'blur-[3px] scale-105' : ''}`}
                                 />
                             )}
 
@@ -820,7 +820,7 @@ export default function DiscoveryCard({
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
                         <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
-                            <img src={currentPhoto} alt="Full View" className="max-w-full max-h-full object-contain shadow-2xl rounded-lg" />
+                            <img src={currentPhoto} alt="Full View" loading="lazy" className="max-w-full max-h-full object-contain shadow-2xl rounded-lg" />
                             {photos.length > 1 && (
                                 <>
                                     <button onClick={(e) => { e.stopPropagation(); setActivePhotoIdx(prev => (prev - 1 + photos.length) % photos.length); }} className="absolute left-2 md:-left-16 p-4 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-sm transition-all">
@@ -840,4 +840,6 @@ export default function DiscoveryCard({
             }
         </>
     );
-}
+});
+
+export default DiscoveryCard;
